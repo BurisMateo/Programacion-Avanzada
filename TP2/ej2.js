@@ -1,5 +1,5 @@
 
-// Ejercicio 2: API Last FM
+/// Ejercicio 2: API Last FM
 
 const getJSON = async() => {
     const apiKey = "2c3803233cc6bb2b28ce348374fd5dc9";
