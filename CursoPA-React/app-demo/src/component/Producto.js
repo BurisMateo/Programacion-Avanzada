@@ -5,20 +5,38 @@ const Producto = ({producto, carrito, agregarProducto, productos}) => {
 
     //Agregar remeras al carrito
     const seleccionarProducto = () => {
-        const producto = productos.filter(producto => producto.id==id)[0];
+        const producto = productos.filter(producto => producto.id===id)[0];
         agregarProducto([
             ...carrito,
             producto
-        ])
+        ]);
+    }
+
+    //Eliminiar un producto del carrito
+    const eliminarProducto = id => {
+        const productos = carrito.filter(producto => producto.id !== id);
+    
+        //colocar los productos en el state
+        agregarProducto(productos);
     }
 
     return(
         <div>
             <h1>{nombre}</h1>
             <h2>{precio}</h2>
-            <button type="button" onClick={ () => seleccionarProducto()}>
-                Comprar
-            </button>
+            {
+                productos
+                ?
+                (
+                    <button type="button" onClick={ () => seleccionarProducto(id)}>
+                    Comprar
+                    </button>
+                )
+                :
+                <button type="button" onClick={ () => eliminarProducto(id)}>
+                    Eliminar
+                </button>
+            }
         </div>
     )
 }

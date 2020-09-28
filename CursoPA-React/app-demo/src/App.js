@@ -4,6 +4,7 @@ import './App.css';
 import Footer from './component/Footer';
 import Header from './component/Header';
 import Producto from './component/Producto';
+import Carrito from './component/Carrito';
 
 function App() {
   //Crear listado de productos
@@ -35,7 +36,12 @@ function App() {
           carrito = {carrito}
           agregarProducto = {agregarProducto}
         />
-      ))}
+      ))};
+
+      <Carrito
+        carrito = {carrito}
+        agregarProducto = {agregarProducto}
+      />
 
       <Footer 
         fecha={fecha}
